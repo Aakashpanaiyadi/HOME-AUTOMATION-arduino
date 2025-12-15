@@ -2,7 +2,7 @@ const int relay1 = 2;
 const int relay2 = 3;  
 const int relay3 = 4;  
 const int relay4 = 5;  
-const int buttonPin = 7; // Simulate Bluetooth ON signal  
+const int buttonPin = 7;  
 int buttonState = 0;  
 
 void setup() {
@@ -10,7 +10,7 @@ void setup() {
   pinMode(relay2, OUTPUT);
   pinMode(relay3, OUTPUT);
   pinMode(relay4, OUTPUT);
-  pinMode(buttonPin, INPUT_PULLUP); // Simulated Bluetooth button  
+  pinMode(buttonPin, INPUT_PULLUP); 
   Serial.begin(9600);
 }
 
@@ -29,8 +29,6 @@ void loop() {
     if (command == 'G') digitalWrite(relay4, HIGH); // Turn ON Device 4  
     if (command == 'H') digitalWrite(relay4, LOW);  // Turn OFF Device 4  
   }
-
-  // Simulating Bluetooth button press to turn ON Device 1  
   if (buttonState == LOW) {  
     Serial.println("Simulated Bluetooth: A");  
     digitalWrite(relay1, HIGH);  
